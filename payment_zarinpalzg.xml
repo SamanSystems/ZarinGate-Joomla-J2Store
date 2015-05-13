@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" method="upgrade" group="j2store">
+	<name>zarinpalzg J2store</name>
+	<version>1.0</version>
+	<creationDate>فروردین 1394</creationDate>
+	<author>محمد سلیمانی</author>
+	<authorEmail>soleymani2013@gmail.com</authorEmail>
+	<authorUrl>www.datisrayan.ir</authorUrl>
+	<copyright>2013 joomina.ir</copyright>
+	<license>GNU General Public License v2</license>
+	   <description><![CDATA[<body link="#e8f51c" alink="#008080" vlink="#e8f51c"><div align="center"><table border="1" cellpadding="6" cellspacing="0" id="table1" bordercolor="#e5e5e5" style="font-family: Tahoma" width="90%" dir="rtl"><tr><td rowspan="6" width="190" height="200"><img border="0" src="http://www.datisrayan.ir/images/sampledata/logo/000.gif" width="202" height="190"></td><td colspan="2" bgcolor="#42e56c"><p align="center"><b><a style="text-decoration: none" target="_blank" href="http://datisrayan.ir/about-us-page/shoup"><font color="#000000">انجمن پارس جوم</font></a>&nbsp;تقدیم میکند	</b> </p></td></tr><tr><td width="150" bgcolor="#e5e714"><font size="2" color="#000000">نام افزونه :</font></td><td bgcolor="#f5f5f5"><span lang="fa">اتصال J2store به درگاه زرین پال زرین گیت</span></td></tr><tr><td width="150" bgcolor="#e8f51c"><font size="2" color="#000000">توضیحات:</font></td><td bgcolor="#f5f5f5">این پلاگین افزونه اتصال J2store به درگاه زرین پال زرین گیت .</span></td></tr><tr><td width="150" bgcolor="#e8f51c"><font color="#000000"><font size="2">توسعه دهنده </font><span lang="fa"><font size="2"> :</font></span></font></td><td bgcolor="#f5f5f5"><span lang="fa">انجمن پارس جوم</span></td></tr><tr><td width="150" bgcolor="#e8f51c"><font size="2" color="#000000">برنامه نویسی شده<span lang="fa"> توسط</span> :</font></td><td bgcolor="#f5f5f5">محمد سلیمانی - تیم برنامه نویسی پارس جوم</td></tr></table></div>]]></description>
+	
+	<files>
+		<filename plugin="payment_zarinpalzg">payment_zarinpalzg.php</filename>
+		<filename>index.html</filename>
+		<folder>payment_zarinpalzg</folder>	
+	</files>
+    
+<config>
+	<fields name="params">
+  	  <fieldset name="basic">
+  	  <field name="display_name" type="text" size="30" default="زرین پال زرین گیت" label="نام درگاه پرداخت" description="نام درگاه پرداختی خود را وارد کنید"/>
+	  <field name="Address" type="text" size="30" default="www.yourdomain.com" label="آدرس سایت شما" description="جهت انجام عملیات چرداخت، لطفا آدرس سایت خود را وارد نمایید"/>
+	  <field name="merchant_id" type="text" size="30" default="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" label="کد درگاه" description="کد درگاه زرین پال   خود را وارد نمایید"/>
+		<field name="onbeforepayment" type="textarea" cols="10" rows="5" default="" label="j2store_on_before_payment_label" description="j2store_on_before_payment_desc"/>
+        <field name="onafterpayment" type="textarea" cols="10" rows="5" default="" label="j2store_on_after_payment_label" description="j2store_on_after_payment_desc"/>
+        
+		<field name="payment_status" type="list" default="4" label="وضعیت سفارش بعد از پرداخت" description="وضعیت سفارش بعد از پرداخت">
+          <option value="1">J2STORE_CONFIRMED</option>
+		  <option value="4">J2STORE_PENDING</option>
+          <option value="3">J2STORE_FAILED</option>          
+        </field>
+		
+       <field type="spacer" />        
+       <field name="button_text" type="text" size="50" default="پرداخت" label="j2store_button_text_label" description="j2store_button_text_desc" />
+  	   
+  	   
+	</fieldset>
+  </fields>	
+</config>			
+</extension>
