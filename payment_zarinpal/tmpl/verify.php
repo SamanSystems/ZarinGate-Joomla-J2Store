@@ -26,7 +26,7 @@ $query = "select orderpayment_amount,transaction_status,order_state_id  from #__
 $db->setQuery($query);
 $orderData = $db->loadObject(); 
 if($_GET['Status'] == 'OK' && $orderData->orderpayment_amount == $Amount && $orderData->transaction_status == 'ناقص' && $orderData->order_state_id == 5) {
-    $client = new nusoap_client('https://de.zarinpalzg.com/pg/services/WebGate/wsdl', 'wsdl'); 
+    $client = new nusoap_client('https://de.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl'); 
     $client->soap_defencoding = 'UTF-8';
     $result = $client->call('PaymentVerification', array(
                                                         array(
