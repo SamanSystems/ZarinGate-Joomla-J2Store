@@ -33,7 +33,7 @@ $Addnew = explode('//',$Address);
 if (strlen($Addnew[0]) != 0)
    $Address =   $Addnew[1];
 $CallbackURL = JURI::root()."verify.php?Address=".$Address."&orderId=".$orderID."&orderpayment_id=".$orderpayment_id."&merchant=".$MerchantID."&amount=".$Amount;  // Required
-$client = new nusoap_client('https://de.zarinpalzg.com/pg/services/WebGate/wsdl', 'wsdl'); 
+$client = new nusoap_client('https://de.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl'); 
 $client->soap_defencoding = 'UTF-8';
 $result = $client->call('PaymentRequest', array(
                                             array(
@@ -48,7 +48,7 @@ $result = $client->call('PaymentRequest', array(
 );  
 if($result['Status'] == 100)
 {
-    Header('Location: https://www.zarinpalzg.com/pg/StartPay/'.$result['Authority'].'/ZarinGate');
+    Header('Location: https://www.zarinpal.com/pg/StartPay/'.$result['Authority'].'/ZarinGate');
 } else {
     echo'ERR: '.$result['Status'];
 }
